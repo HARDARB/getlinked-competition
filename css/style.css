@@ -1,0 +1,2257 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@import url('clash-display.css');
+@import "compass/css3";
+
+:root {
+    --Deepblue: #150E28;
+    --pulple: #903AFF;
+    --lightpulp: #D434FE;
+    --white: #ffffff;
+    --pink: #ff26B9;
+  }
+  
+
+
+  body {
+    background: var(--Deepblue);
+    color: var(--white);
+  }
+
+
+
+/* -------------------- btn general background -------------------*/
+.btn {
+  color: var(--white);
+ width: 120px;
+ background: linear-gradient(96deg, rgba(255,38,185,1) 0%, rgba(212,52,254,1) 50%, rgba(144,58,255,1) 100%);
+}
+
+
+/* ------------- general flare and stars overlay -------------------*/
+
+.general-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.paragraph {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+} 
+
+
+.heading1 {
+  font-family: 'ClashDisplay-Bold';
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.pinkareatext {
+  color: var(--lightpulp);
+}
+
+.purplearea {
+  color: var(--pink);
+}
+
+.pinkarea {
+  color: var(--lightpulp);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* ------------------------ section text --------------------------*/
+
+.heading2 {
+  font-family: 'ClashDisplay-Bold';
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.paragraph1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 27.5px;
+}
+
+.purplearea {
+  color: var(--pink);
+}
+
+@media (min-width: 760px) { 
+  .paragraph {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  } 
+  
+  .heading1 {
+    font-family: 'ClashDisplay-Bold';
+    font-size: 60px;
+    font-weight: 700;
+  }
+
+  .heading2 {
+    font-family: 'ClashDisplay-Bold';
+    font-size: 32px;
+    font-weight: 900;
+  }
+  
+  .paragraph1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27.5px;
+    width: 500px;
+  }
+
+  .pinkarea {
+    color: var(--lightpulp);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  
+}
+
+/* ----------------- Navbar start here--- -------------------*/
+
+
+/* BASIC SETUP */
+
+.page-wrapper {
+  width: 100%;
+  height: auto;
+  padding: 20px 0 5px 0 ;
+}
+.page-wrapper {
+  width: 100%;
+}
+
+
+.grad-bar {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(-45deg, #ff26B9, #E73C7E, #903AFF, #D434FE);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+}
+
+/* NAVIGATION */
+
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 60px;
+  overflow: hidden;
+}
+
+.navbar img {
+  height: 30px;
+  width: auto;
+  justify-self: start;
+  margin-left: 100px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-self: end;
+  
+}
+
+.nav-item a {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.nav-item a:hover {
+  padding: 10px;
+  color: var(--white);
+  border-radius: 5px;
+ background: linear-gradient(96deg, rgba(255,38,185,1) 0%, rgba(212,52,254,1) 50%, rgba(144,58,255,1) 100%);
+}
+
+
+
+/* ----------------MOBILE MENU & ANIMATION----------------- */
+
+.menu-toggle .bar{
+  width: 25px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-toggle {
+  justify-self: end;
+  margin-right: 25px;
+  display: none;
+}
+
+.menu-toggle:hover{
+  cursor: pointer;
+}
+
+#mobile-menu.is-active .bar:nth-child(2){
+  opacity: 0;
+}
+
+#mobile-menu.is-active .bar:nth-child(1){
+  -webkit-transform: translateY(8px) rotate(45deg);
+  -ms-transform: translateY(8px) rotate(45deg);
+  -o-transform: translateY(8px) rotate(45deg);
+  transform: translateY(8px) rotate(45deg);
+}
+
+#mobile-menu.is-active .bar:nth-child(3){
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* KEYFRAME ANIMATIONS */
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.navbar-brand {
+  display: block;
+}
+
+
+  /* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 720px) { 
+  .navbar-brand {
+    display: none;
+  }
+  
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    justify-content: start;
+    top: 70px;
+    background-color: var(--Deepblue);
+    width: 100%;
+    height: calc(100vh - 55px);
+    transform: translate(-101%);
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .navbar li {
+    padding: 15px;
+  }
+  
+  .navbar li:first-child {
+    margin-top: 50px;
+  }
+  
+  .navbar li a {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+   
+  .menu-toggle, .bar {
+    display: block;
+    cursor: pointer;
+    margin-left: 200px;
+  }
+
+  .cicle-togglebtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--lightpulp);
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .mobile-nav {
+  transform: translate(0%)!important;
+}
+}
+  
+/* ----------------- Navbar end here--- -------------------*/
+
+
+
+/* --------------------Hero section start here -------------------*/
+
+.hero-section {
+  height: 140vh;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+
+@media (min-width: 768px) { 
+  .hero-section {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+}
+
+.c {
+  text-align: center;
+}
+
+/* -----------Multiple typing -------------------*/
+
+.muitityping {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  font-style: italic;
+  position: absolute;
+  right: 5%;
+  margin-top: 20px;
+  z-index: -1;
+}
+
+@media (min-width: 768px) { 
+  .muitityping {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+    position: absolute;
+    right: 5%;
+    margin-top: 20px;
+  }
+
+  .c {
+
+    text-align: start;
+  }
+  
+}
+
+
+
+.hero-text {
+  position: relative;
+  top: 30%;
+  z-index: -1;
+}
+
+
+@media (min-width: 760px) { 
+  .hero-text {
+    position: relative;
+    top: 20%;
+  }
+}
+
+
+
+/* ----------- hero section bulb,link,star  and register btn-------------------*/
+
+.hero-bulb {
+  position: absolute;
+  top: -35px; 
+}
+.hero-bulb img {
+  width: 30px;
+}
+
+.herolinkstar img{
+  width: 30px;
+}
+
+.herobtncenter {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 760px) { 
+  .hero-bulb {
+    position: absolute;
+    top: -60px;  
+  }
+
+  .hero-bulb img {
+    width: 50px;
+  }
+
+  .herolinkstar img{
+    width: 50px;
+  }
+
+  .herobtncenter {
+ 
+    display: block;
+ 
+  }
+  
+}
+
+
+/* ----------- hero section flares and stars -------------------*/
+
+.purple-flare1 {
+  position: absolute;
+  width: 60%;
+  top: -25%;
+  left: 5%;
+}
+
+.purple-flare2 {
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  right: 25%;
+}
+.scatter-star1 {
+ position: absolute;
+  width: 4%;
+  top: 30%;
+  left: 30%;
+}
+.scatter-star2 {
+  position: absolute;
+  width: 3%;
+  top: 30%;
+  right: 10%;
+  opacity: .3;
+}
+.scatter-star3 {
+  position: absolute;
+  width: 2%;
+  top: 75%;
+  right: 26%;
+  opacity: .3;
+}
+
+.line-strike {
+  position: absolute;
+  width: 28%;
+  top: 26%;
+  right: 5%;
+}
+
+@media (min-width: 768px) { 
+  .purple-flare1 {
+    position: absolute;
+    width: 60%;
+    top: -25%;
+    left: 5%;
+  }
+  .purple-flare2 {
+    position: absolute;
+    width: 60%;
+    top: 5%;
+    right: -10%;
+  }
+  .scatter-star1 {
+   position: absolute;
+    width: 2%;
+    top: 20%;
+    left: 10%;
+  }
+  .scatter-star2 {
+    position: absolute;
+    width: 2%;
+    top: 40%;
+    left: 50%;
+    opacity: .3;
+  }
+  .scatter-star3 {
+    position: absolute;
+    width: 2%;
+    top: 90%;
+    left: 30%;
+    opacity: .3;
+  }
+  
+  .line-strike {
+    position: absolute;
+    width: 28%;
+    top: 26%;
+    right: 5%;
+  }
+  
+  .line-strike {
+    position: absolute;
+    width: 15%;
+    top: 23%;
+    right: 5%;
+  }
+  
+  
+}
+
+
+
+/* ----------- hero section galaxy -------------------*/
+
+.galaxy {
+  top: 5%;
+  position: absolute;
+}
+
+.hero-galaxy img{
+  height: 100%;
+  width: 100%;
+  object-fit:contain;
+}
+
+.hero-paragraph {
+  width: 100%;
+}
+
+@media (min-width: 760px) { 
+  .hero-paragraph {
+    width: 80%;
+  }
+  
+}
+/* ----------- hero section human -------------------*/
+
+.human {
+ margin-top: 150px;
+}
+
+@media (min-width: 760px) { 
+  .human {
+    margin-top: 100px;
+   }
+  
+}
+
+.humanimag img{
+  height: 100%;
+  width: 100%;
+  object-fit:cover;
+}
+
+/* ----------- timer -------------------*/
+
+.count {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.time {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Unica One', cursive;
+  font-size: 40px;
+  color: var(--white);
+}
+
+.timercolon {
+  font-size: 16px;
+  color: #fff;
+  margin-left: -10px;
+  margin-top: 12px;
+}
+
+
+@media (min-width: 760px) { 
+  .time {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Unica One', cursive;
+    font-size: 60px;
+    color: var(--white);
+  }
+
+  .count {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    text-align: start;
+    
+  }
+
+  .timercolon {
+    font-size: 22px;
+    color: #fff;
+    margin-left: -20px;
+    margin-top: 20px;
+  }
+  
+}
+
+.section-smallimage {
+  margin-top: 10px;
+  height: 300px;
+  width: 300px;
+}
+.section-smallimage img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.section-smallimage1 {
+  margin-top: 70px;
+  height: 300px;
+  width: 300px;
+}
+.section-smallimage1 img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+@media (min-width: 768px) { 
+  .section-smallimage {
+    margin-top: 100px;
+    height: 500px;
+    width: 500px;
+  }
+  .section-smallimage img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  .section-smallimage1 {
+    margin-top: 290px;
+    height: 500px;
+    width: 500px;
+  }
+  .section-smallimage1 img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  
+}
+
+
+/* -------------- Hero section end here-------------------*/
+
+/* -------------- Introduction section start start here-------------------*/
+
+.section-one {
+  position: relative;
+  padding: 30px 0;
+}
+
+@media (min-width: 760px) { 
+  .section-one {
+    position: relative;
+    padding: 30px 0;
+  }
+  
+}
+
+/* ----------- section three flares and stars -------------------*/
+
+.scatter-starone1 {
+  position: absolute;
+  width: 4%;
+  top: 20%;
+  left: 10%;
+}
+
+.scatter-starone2 {
+  position: absolute;
+  width: 4%;
+  top: 50%;
+  right: 5%;
+}
+
+.scatter-arrow {
+  position: absolute;
+  width: 5%;
+  top: 85%;
+  left: 40%;
+}
+
+.purple-flareone {
+  position: absolute;
+  width: 60%;
+  top: 40%;
+  left: 5%;
+  display: none;
+}
+
+.section-text {
+  margin-top: 50px;
+}
+
+@media (min-width: 760px) { 
+  .section-text {
+    margin-top: 150px;
+  }
+
+  .scatter-starone1 {
+    position: absolute;
+    width: 2%;
+    top: 20%;
+    left: 10%;
+  }
+  
+  .scatter-starone2 {
+    position: absolute;
+    width: 2%;
+    top: 40%;
+    right: 10%;
+  }
+
+  .purple-flareone {
+    position: absolute;
+    width: 60%;
+    top: 40%;
+    left: 5%;
+    display: block;
+  }
+}
+/* -------------- Introduction section start end here-------------------*/
+
+
+
+
+/* -------------- Rule and regulation section start here -------------------*/
+
+
+.section-two {
+  position: relative;
+  padding: 30px 0;
+}
+
+@media (min-width: 760px) { 
+  .section-two {
+    position: relative;
+    padding: 30px 0;
+  }
+  
+}
+
+/* ----------- section two flares and stars -------------------*/
+
+
+.purple-flaretwo1 {
+  position: absolute;
+  width: 60%;
+  top: -5%;
+  left: 2%;
+}
+.purple-flaretwo2 {
+  position: absolute;
+  width: 60%;
+  top: 40%;
+  right: -25%;
+}
+
+.scatter-startwo1 {
+  position: absolute;
+  width: 2%;
+  top: 20%;
+  left: 10%;
+}
+
+.scatter-startwo2 {
+  position: absolute;
+  width: 2%;
+  top: 70%;
+  left: 50%;
+}
+
+
+@media (min-width: 760px) { 
+  .purple-flaretwo1 {
+    position: absolute;
+    width: 60%;
+    top: -50%;
+    left: 5%;
+  }
+  .purple-flaretwo2 {
+    position: absolute;
+    width: 60%;
+    top: 40%;
+    right: -25%;
+  }
+}
+
+
+
+/* -------------- selection criteria section start here -------------------*/
+
+
+.section-three {
+  position: relative;
+  padding: 30px 0;
+}
+
+@media (min-width: 760px) { 
+  .section-three {
+    position: relative;
+    padding: 30px 0;
+  }
+  
+  
+}
+
+.paragraph2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+}
+
+
+
+/* ----------- section three flares and stars -------------------*/
+
+.purple-flarethree1 {
+  position: absolute;
+  width: 60%;
+  top: 20%;
+  left: 5%;
+}
+.purple-flarethree2 {
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  right: -10%;
+}
+
+.scatter-starthree1 {
+  position: absolute;
+  width: 2%;
+  top: 20%;
+  left: 10%;
+}
+
+.scatter-starthree2 {
+  position: absolute;
+  width: 2%;
+  top: 50%;
+  left: 30%;
+}
+.scatter-starthree3 {
+  position: absolute;
+  width: 2%;
+  top: 80%;
+  left: 45%;
+}
+
+.section-threetext {
+  margin-left: 5px;
+}
+
+
+/* ----------- section three images -------------------*/
+
+.section-image {
+  margin-top: 100px;
+  height: 600px;
+  width: 600px;
+}
+.section-image img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+
+
+/* -------------- selection criteria section start here -------------------*/
+
+
+/* -------------- frequently asked qtn section start here -------------------*/
+
+
+.section-four {
+  position: relative;
+  padding: 30px 0;
+}
+
+@media (min-width: 760px) { 
+  .section-four {
+    position: relative;
+    padding: 30px 0;
+  }
+}
+/* ----------- section four flares and stars -------------------*/
+
+
+.purple-flarefour {
+  position: absolute;
+  width: 60%;
+  top: -40%;
+  right: -10%;
+}
+
+.purple-flarethree {
+  position: absolute;
+  width: 60%;
+  top: 20%;
+  left: 5%;
+}
+
+.scatter-starfour1 {
+  position: absolute;
+  width: 2%;
+  top: 10%;
+  left: 10%;
+}
+.scatter-starfour2 {
+  position: absolute;
+  width: 2%;
+  top: 20%;
+  right: 40%;
+}
+.scatter-starfour5 {
+  position: absolute;
+  width: 2%;
+  top: 10%;
+  right: 30%;
+}
+.scatter-starfour3 {
+  position: absolute;
+  width: 2%;
+  top: 50%;
+  right: 45%;
+  opacity: .3;
+}
+.scatter-starfour4 {
+  position: absolute;
+  width: 2%;
+  top: 90%;
+  right: 10%;
+}
+
+/* ----------- section four questions, borders and plus icons -------------------*/
+
+.Question-text {
+  margin-top: 10px;
+  border-bottom: 1px solid var(--lightpulp);
+}
+
+
+.questionmark1 {
+  position: absolute;
+  width: 3%;
+  top: 10%;
+  right: 20%;
+}
+
+.questionmark2 {
+  position: absolute;
+  width: 3%;
+  top: 5%;
+  right: 33%;
+}
+.questionmark3 {
+  position: absolute;
+  width: 3%;
+  top: 10%;
+  right: 45%;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -------------- frequently asked qtn section end here -------------------*/
+
+
+
+/* -------------- timeline section start here start here -------------------*/
+
+
+.section-five {
+  position: relative;
+  padding: 30px 0;
+}
+
+
+.headtextfive {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.detailstimeline {
+  width: 100%;
+}
+
+.sectionfive-details {
+  margin-top: 50px;
+}
+
+@media (min-width: 768px) { 
+  .section-five {
+    position: relative;
+    padding: 30px 0;
+  }
+  .detailstimeline {
+    width: 35%;
+  }
+  
+}
+/* ----------- section five stars -------------------*/
+
+.scatter-starfive1 {
+  position: absolute;
+  width: 2%;
+  top: 10%;
+  left: 20%;
+}
+
+.scatter-starfive2 {
+  position: absolute;
+  width: 2%;
+  top: 50%;
+  right: 10%;
+}
+.scatter-starfive3 {
+  position: absolute;
+  width: 2%;
+  top: 80%;
+  left: 5%;
+}
+
+/* ----------- section five details design -------------------*/
+
+.sectionfive-details {
+  position: relative;
+}
+
+.sectionfive-details::after {
+content: "";
+position: absolute;
+width: 4px;
+height: 180%;
+background: var(--white);
+top: 0;
+left: 5%;
+z-index: -1;
+animation: movelineaction 6s linear forwards;
+z-index: -2;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 110px;
+  left: -1%;
+  border-radius: 50%;
+  border: 10px solid var(--Deepblue);
+  background-color: var(--lightpulp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.circle2 {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 80px;
+  left: -1%;
+  border-radius: 50%;
+  border: 10px solid var(--Deepblue);
+  background-color: var(--lightpulp);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.subdetails {
+  margin-top: 30px;
+  display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+ animation: textdown 1s linear forwards;
+ opacity: 0;
+}
+
+.details1 {
+  text-align: start;
+  padding: 0 0 0 40px;
+  width: 100%;
+}
+
+.details2 {
+  padding: 0 0 0 40px;
+  width: 100%;
+}
+.details3 {
+  padding: 0 0 0 40px;
+  width: 100%;
+}
+
+.details4 {
+  text-align: start;
+  padding: 0 0 0 40px;
+  width: 100%;
+}
+
+@media (min-width: 760px) { 
+  .sectionfive-details::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 90%;
+    background: var(--white);
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    animation: movelineaction 6s linear forwards;
+    z-index: -2;
+    }
+    
+    .circle {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 20px;
+      left: 48%;
+      border-radius: 50%;
+      border: 5px solid var(--Deepblue);
+      background-color: var(--lightpulp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .circle2 {
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 45px;
+      left: 48%;
+      border-radius: 50%;
+      border: 5px solid var(--Deepblue);
+      background-color: var(--lightpulp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .subdetails {
+      margin-top: 10px;
+      position: relative;
+      display: flex;
+     justify-content: space-between;
+     flex-direction: row;
+     animation: textdown 1s linear forwards;
+     opacity: 0;
+    }
+
+    .details1 {
+      text-align: end;
+      padding: 15px 100px;
+      width: 50%;
+    }
+    
+    .details2 {
+      padding: 30px 100px;
+      width: 50%;
+    }
+    .details3 {
+      padding: 15px 100px;
+      width: 50%;
+    }
+    
+    .details4 {
+      text-align: end;
+      padding: 25px 100px;
+      width: 50%;
+    }
+}
+
+
+
+/* ----------- section five text animation -------------------*/
+
+@keyframes textdown {
+  0% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.subdetails:nth-child(1){
+  animation-delay: 0s;
+}
+.subdetails:nth-child(2){
+  animation-delay: 1s;
+}
+.subdetails:nth-child(3){
+  animation-delay: 2s;
+}
+.subdetails:nth-child(4){
+  animation-delay: 3s;
+}
+.subdetails:nth-child(5){
+  animation-delay: 4s;
+}
+.subdetails:nth-child(6){
+  animation-delay: 5s;
+}
+
+/* ----------- section five moveline animation -------------------*/
+
+@keyframes movelineaction {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 90%;
+  }
+}
+
+/* -------------- timeline section end here -------------------*/
+
+
+
+/* -------------- price and rewards section start here -------------------*/
+
+
+.section-six {
+  padding: 30px 0;
+  position: relative;
+}
+
+
+
+@media (min-width: 768px) { 
+  .section-six {
+    padding: 30px 0;
+    position: relative;
+  }
+}
+
+
+/* ----------- section flare and stars -------------------*/
+
+.purple-flaresix1 {
+  position: absolute;
+  width: 100%;
+  top: 4%;
+  left: -2%;
+}
+.purple-flaresix2 {
+  position: absolute;
+  width: 70%;
+  top: 60%;
+  right: -35%;
+}
+
+.scatter-starsix1 {
+  position: absolute;
+  width: 2%;
+  top: 0%;
+  left: 20%;
+}
+
+.scatter-starsix2 {
+  position: absolute;
+  width: 2%;
+  top: 3%;
+  right: 10%;
+}
+.scatter-starsix3 {
+  position: absolute;
+  width: 3%;
+  top: 50%;
+  left: 20%;
+}
+
+.scatter-starsix4 {
+  position: absolute;
+  width: 2%;
+  top: 70%;
+  right: 11%;
+}
+.scatter-starsix5 {
+  position: absolute;
+  width: 2%;
+  top: 96%;
+  right: 33%;
+}
+
+@media (min-width: 768px) { 
+  .purple-flaresix1 {
+    position: absolute;
+    width: 60%;
+    top: -10%;
+    left: 5%;
+  }
+  .purple-flaresix2 {
+    position: absolute;
+    width: 60%;
+    top: 25%;
+    right: -40%;
+  }
+
+  .scatter-starsix1 {
+    position: absolute;
+    width: 2%;
+    top: 10%;
+    left: 20%;
+  }
+  
+  .scatter-starsix2 {
+    position: absolute;
+    width: 2%;
+    top: 30%;
+    right: 10%;
+  }
+  
+  .scatter-starsix3 {
+    position: absolute;
+    width: 1%;
+    top: 80%;
+    left: 20%;
+  }
+  
+  .scatter-starsix4 {
+    position: absolute;
+    width: 2%;
+    top: 30%;
+    right: 45%;
+  }
+  .scatter-starsix5 {
+    position: absolute;
+    width: 2%;
+    top: 80%;
+    right: 20%;
+  }
+}
+/* ----------- section six award -------------------*/
+
+.awards {
+  display: flex;
+  margin-top: 50px;
+}
+
+
+.sectionsiximg {
+  margin-top: 100px;
+  height: 500px;
+  width: 500px;
+}
+.sectionsiximg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.awardtextoverlay1 {
+  z-index: -1;
+  top: 53%;
+  border: 1px solid var(--lightpulp);
+  background-color: #ff26ba1a;
+  position: absolute;
+  border-radius: 10px;
+  height: 130px;
+  width: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.awardtextoverlay2 {
+  z-index: -1;
+  top: -20%;
+  left: 12%;
+  position: relative;
+  border-radius: 10px;
+  height: 150px;
+  width: 90px;
+  border: 1px solid var(--pulple);
+  background-color: #8f3aff1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.deeppulplearea {
+  color: var(--pulple);
+}
+.award-one {
+  margin: 70px 1px 0 0;
+}
+
+
+.awardtext {
+  margin-top: 50px;
+}
+.awardtext2 {
+  margin-top: 50px;
+}
+
+
+.textheading-ss1 {
+  padding-left: 0;
+  display: block;
+}
+.textheading-ss2 {
+  padding-left: 0;
+  display: none;
+}
+
+.award-one img{
+  height: 90px;
+  width: 90px;
+}
+.award-two img{
+  height: 120px;
+  width: 120px;
+}
+
+.awardtextsizeh1 {
+  font-size: 12px;
+    }
+.awardtextsizeh4 {
+  font-size: 12px;
+    }
+
+@media (min-width: 768px) { 
+  .award-one img{
+    height: 150px;
+    width: 150px;
+    transition: all .5s ease;
+  }
+
+  .award-one img:hover{
+    height: 170px;
+    width: 170px;
+  }
+  .award-two img:hover{
+    transition: all .5s ease;
+    height: 240px;
+    width: 240px;
+  }
+  .award-two img{
+    height: 220px;
+    width: 220px;
+  }
+
+  .textheading-ss2 {
+    padding-left: 100px;
+    display: block;
+  }
+
+  .textheading-ss1 {
+    display: none;
+  }
+  
+  .awardtextsizeh1 {
+font-size: 25px;
+  }
+  .awardtextsizeh4 {
+font-size: 20px;
+  }
+  
+  .awardtextoverlay1 {
+    z-index: -1;
+    top: 53%;
+    border: 1px solid var(--lightpulp);
+    background-color: #ff26ba1a;
+    position: absolute;
+    border-radius: 10px;
+    height: 200px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .awardtextoverlay2 {
+    z-index: -1;
+    top: -20%;
+    left: 15%;
+    position: relative;
+    border-radius: 10px;
+    height: 300px;
+    width: 150px;
+    border: 1px solid var(--pulple);
+    background-color: #8f3aff1a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .awardtext {
+    margin-top: 50px;
+  }
+  .awardtext2 {
+    margin-top: 100px;
+  }
+  .award-one {
+    margin: 180px 0 0 0;
+  }
+}
+
+/* -------------- price and rewards section end here -------------------*/
+
+
+
+
+/* -------------- Partners and Sponsors section start here -------------------*/
+
+
+.section-seven {
+  padding: 30px 0;
+  position: relative;
+}
+
+@media (min-width: 768px) { 
+  .section-seven {
+    padding: 30px 0;
+    position: relative;
+  }
+  
+}
+/* ----------- section seven flare and stars -------------------*/
+
+.purple-flareseven1 {
+  position: absolute;
+  width: 80%;
+  top: -6%;
+  right: 45%;
+}
+.purple-flareseven2 {
+  position: absolute;
+  width: 80%;
+  top: 70%;
+  right: -30%;
+}
+
+.scatter-starseven1 {
+  position: absolute;
+  width: 2%;
+  top: 40%;
+  right: 80%;
+}
+
+.scatter-starseven2 {
+  position: absolute;
+  width: 2%;
+  top: 85%;
+  left: 80%;
+}
+.scatter-starseven3 {
+  position: absolute;
+  width: 2%;
+  top: 17%;
+  left: 20%;
+}
+
+@media (min-width: 768px) { 
+  .purple-flareseven1 {
+    position: absolute;
+    width: 50%;
+    top: -30%;
+    right: 45%;
+  }
+  .purple-flareseven2 {
+    position: absolute;
+    width: 60%;
+    top: 25%;
+    right: -30%;
+  }
+  
+  .scatter-starseven1 {
+    position: absolute;
+    width: 2%;
+    top: 30%;
+    right: 45%;
+  }
+  
+  .scatter-starseven2 {
+    position: absolute;
+    width: 2%;
+    top: 73%;
+    left: 52%;
+  }
+  .scatter-starseven3 {
+    position: absolute;
+    width: 2%;
+    top: 17%;
+    left: 20%;
+  }
+  
+}
+
+/* ----------- section seven box and logo -------------------*/
+
+
+.boxxy {
+  width: 100%;
+  border: 1px solid var(--lightpulp);
+  height: 200px;
+  position: relative;
+}
+
+
+
+.libertylogo1 {
+  position: absolute;
+  width: 8%;
+  top: 25%;
+  left: 23%;
+}
+
+.libertylogo2 {
+  position: absolute;
+  width: 15%;
+  top: 30%;
+  left: 42%;
+ 
+}
+.winwiselogo {
+  position: absolute;
+  width: 10%;
+  top: 20%;
+  left: 69%;
+ 
+}
+.wisperlogo {
+  position: absolute;
+  width: 10%;
+  top: 57%;
+  left: 22%;
+
+  
+}
+.Payboxlogo {
+  position: absolute;
+  width: 10%;
+  top: 60%;
+  left: 45%;
+}
+
+.Vizuallogo {
+  position: absolute;
+  width: 15%;
+  top: 60%;
+  left: 69%;
+}
+
+.cont {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.lines {
+  width: 30%;
+  height: 40px;
+position: relative;
+  
+}
+
+.lines::after, .lines::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  height: 1px;
+  background: #fff;
+  width: 40%;
+  top: 100%;
+}
+
+
+
+.lines::after {
+  left: 0;
+}
+
+.lines::before {
+  right: 0;
+}
+
+
+.lines2 {
+  position: absolute;
+  left: 62%;
+}
+
+.lines2::after,  .lines2::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  height: 50px;
+  background: #fff;
+  width: 1px;
+  margin: 10px;
+
+}
+.lines2::after {
+ top: 0;
+}
+
+.lines2::before {
+  bottom: 0;
+}
+
+.lines3 {
+ 
+  position: absolute;
+  left: 32%;
+ 
+}
+
+.lines3::after,  .lines3::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  height: 50px;
+  background: #fff;
+  width: 1px;
+  margin: 10px;
+
+}
+.lines3::after {
+ top: 0;
+}
+
+.lines3::before {
+  bottom: 0;
+}
+
+
+@media (min-width: 768px) { 
+  .boxxy {
+    margin-top: 50px;
+    height: 500px;
+    width: 100%;
+    border: 1px solid var(--lightpulp);
+    height: 500px;
+    position: relative;
+  }
+  
+  
+  
+  .libertylogo1 {
+    position: absolute;
+    width: 5%;
+    top: 25%;
+    left: 25%;
+  }
+  
+  .libertylogo2 {
+    position: absolute;
+    width: 10%;
+    top: 30%;
+    left: 45%;
+   
+  }
+  .winwiselogo {
+    position: absolute;
+    width: 10%;
+    top: 20%;
+    left: 67%;
+   
+  }
+  .wisperlogo {
+    position: absolute;
+    width: 5%;
+    top: 60%;
+    left: 25%;
+  
+    
+  }
+  .Payboxlogo {
+    position: absolute;
+    width: 10%;
+    top: 60%;
+    left: 45%;
+  }
+  
+  .Vizuallogo {
+    position: absolute;
+    width: 10%;
+    top: 60%;
+    left: 67%;
+  }
+  
+  .cont {
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+  
+  }
+  
+  .lines {
+    width: 30%;
+    height: 40px;
+  position: relative;
+    
+  }
+  
+  .lines::after, .lines::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    height: 2px;
+    background: #fff;
+    width: 45%;
+    top: 100%;
+  }
+  
+  
+  
+  .lines::after {
+    left: 0;
+  }
+  
+  .lines::before {
+    right: 0;
+  }
+  
+  
+  .lines2 {
+    position: absolute;
+    left: 63%;
+  }
+  
+  .lines2::after,  .lines2::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    height: 150px;
+    background: #fff;
+    width: 3px;
+    margin: 20px;
+  
+  }
+  .lines2::after {
+   top: 0;
+  }
+  
+  .lines2::before {
+    bottom: 0;
+  }
+  
+  .lines3 {
+   
+    position: absolute;
+    left: 33%;
+   
+  }
+  
+  .lines3::after,  .lines3::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    height: 150px;
+    background: #fff;
+    width: 3px;
+    margin: 20px;
+  
+  }
+  .lines3::after {
+   top: 0;
+  }
+  
+  .lines3::before {
+    bottom: 0;
+  }
+  
+  
+}
+
+/* ----------------------- Partners and Sponsors section end here -------------------*/
+
+
+
+/* -----------------------policies and terms section start here ----------------------*/
+
+.section-eight {
+  padding: 30px 0;
+  position: relative;
+}
+
+@media (min-width: 768px) { 
+  .section-eight {
+    padding: 30px 0;
+    position: relative;
+  }
+}
+
+.key-vector {
+  position: absolute;
+  width: 60%;
+  top: 78%;
+  right: 20%;
+}
+
+
+
+.purple-flareeight1 {
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: -12%;
+}
+.purple-flareeight2 {
+  position: absolute;
+  width: 100%;
+  top: -10%;
+  right: -132px;
+  display: block;
+}
+
+.scatter-stareight1 {
+  position: absolute;
+  width: 2%;
+  top: 0;
+  left: 30%;
+  opacity: .3;
+}
+
+.scatter-stareight2 {
+  position: absolute;
+  width: 2%;
+  top: 15%;
+  left: 52%;
+}
+.scatter-stareight3 {
+  position: absolute;
+  width: 2%;
+  top: 15%;
+  right: 20%;
+}
+
+.scatter-stareight4 {
+  position: absolute;
+  width: 2%;
+  top: 82%;
+  right: 33%;
+}
+.scatter-stareight5 {
+  position: absolute;
+  width: 3%;
+  top: 84%;
+  right: 84%;
+}
+.scatter-stareight6 {
+  position: absolute;
+  width: 2%;
+  top: 98%;
+  right: 14%;
+  opacity: .3;
+}
+
+.scatter-stareight7 {
+  position: absolute;
+  width: 2%;
+  top: 95%;
+  left: 30%;
+}
+
+@media (min-width: 768px) {
+  .purple-flareeight1 {
+    position: absolute;
+    width: 60%;
+    top: 40%;
+    left: -5%;
+  }
+  
+  .purple-flareeight2 {
+    display: none;
+  }
+  
+  .scatter-stareight1 {
+    position: absolute;
+    width: 2%;
+    top: 0;
+    left: 30%;
+    opacity: .3;
+  }
+  
+  .scatter-stareight2 {
+    position: absolute;
+    width: 2%;
+    top: 15%;
+    left: 52%;
+  }
+  .scatter-stareight3 {
+    position: absolute;
+    width: 2%;
+    top: 15%;
+    right: 20%;
+  }
+  
+  .scatter-stareight4 {
+    position: absolute;
+    width: 1%;
+    top: 50%;
+    right: 33%;
+  }
+  .scatter-stareight5 {
+    position: absolute;
+    width: 2%;
+    top: 60%;
+    right: 50%;
+  }
+  .scatter-stareight6 {
+    position: absolute;
+    width: 2%;
+    top: 60%;
+    right: 5%;
+    opacity: .3;
+  }
+  
+  .scatter-stareight7 {
+    position: absolute;
+    width: 2%;
+    top: 65%;
+    left: 5%;
+  }
+  
+}
+
+
+.box2 {
+  margin-top: 50px;
+  height: 760px;
+  padding: 20px;
+  border: 1px solid var(--lightpulp);
+}
+
+
+
+.mark-text-list {
+  display: flex;
+}
+.marker {
+  margin-top: -80px;
+  padding: 15px;
+}
+
+
+
+@media (min-width: 768px) { 
+  .key-vector {
+    position: absolute;
+    width: 30%;
+    top: 5%;
+    right: 10%;
+  }
+  .box2 {
+    margin-top: 50px;
+    height: 600px;
+    width: 500px;
+    background-color: var(--Deepblue);
+    padding: 50px;
+    border: 1px solid var(--lightpulp);
+  }
+  .movebtn {
+    margin: 20px 0 0 150px;
+  }
+
+  .marker {
+    margin-top: -40px;
+    padding: 15px;
+  }
+  
+}
+
+/* --------------------- policies and terms section end here ---------------------*/
+
+
+
+/* ----------------------- footer section start here ---------------------*/
+
+.section-footer {
+  padding: 30px 0;
+  position: relative;
+}
+
+
+.scatter-starfooter1 {
+  position: absolute;
+  width: 2%;
+  top: 10%;
+  left: 2%;
+}
+
+.scatter-starfooter2 {
+  position: absolute;
+  width: 2%;
+  top: 60%;
+  left: 40%;
+}
+
+.scatter-starfooter3 {
+  position: absolute;
+  width: 1%;
+  top: 80%;
+  right: 10%;
+}
+
+.scatter-starfooter4 {
+  position: absolute;
+  width: 1%;
+  top: 30%;
+  right: 33%;
+}
+
+
+.paragraghwidth {
+  width: 80%;
+}
+
+.mf-footer {
+  margin-left: 25px;
+}
+
+
+.pricacyline {
+  border-left: 3px solid var(--lightpulp);
+  padding-left: 8px;
+}
+
+
+.contactus {
+  display: flex;
+  flex-direction: row;
+}
+
+.paragraph1-footer {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.termsprivacy {
+  margin-top: 40px;
+}
+
+.footex {
+ width: 70%;
+}
+
+.section-footer a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.contactarea {
+  padding: 20px 0 0 20px;
+
+}
+
+.backhome {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+}
+
+@media (min-width: 768px) { 
+  .section-footer {
+    padding: 30px 0;
+    position: relative;
+  }
+
+  .mf-footer {
+    margin-left: 0;
+  }
+
+  .termsprivacy {
+    margin-top: 80px;
+  }  
+  
+}
+
+/* ----------- footer section end here ---------------------*/
